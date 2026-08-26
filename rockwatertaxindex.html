@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Director of Talent Acquisition & People | Rockwater Tax</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+            --bg-primary: #F8F9FB;
+            --bg-secondary: #FFFFFF;
+            --accent: #0052CC;
+            --accent-hover: #0043A8;
+            --text-primary: #1A202C;
+            --text-secondary: #64748B;
+            --border: #E2E8F0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg-primary: #0F1419;
+                --bg-secondary: #1A1F2E;
+                --accent: #3B82F6;
+                --accent-hover: #60A5FA;
+                --text-primary: #F1F5F9;
+                --text-secondary: #94A3B8;
+                --border: #334155;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-left: 1rem;
+            padding-left: 1rem;
+            border-left: 1px solid var(--border);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem;
+        }
+
+        /* Title Section */
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h1 .highlight {
+            color: var(--accent);
+        }
+
+        .intro {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        /* Timeline Tabs */
+        .timeline-tabs {
+            display: flex;
+            gap: 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .timeline-tab {
+            padding: 1rem 1.5rem;
+            border: none;
+            background: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .timeline-tab:hover {
+            color: var(--text-primary);
+        }
+
+        .timeline-tab.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Your Fit Section */
+        .fit-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .fit-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+        }
+
+        .fit-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .fit-box ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .fit-box ul.clean-list {
+            list-style: none;
+        }
+
+        .fit-box ul.clean-list li {
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .fit-box ul.clean-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Phase Section */
+        .phase-header {
+            margin-bottom: 2rem;
+        }
+
+        .phase-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .phase-goal {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Initiative */
+        .initiative {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .initiative h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .initiative-problem {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .action-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .action-list li {
+            display: flex;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .action-list li:before {
+            content: "→";
+            color: var(--accent);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .why-matter {
+            background: var(--bg-primary);
+            border-left: 3px solid var(--accent);
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Checkpoint */
+        .checkpoint {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .checkpoint h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .checkpoint ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .checkpoint li {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .checkpoint li:before {
+            content: "✅ ";
+            margin-right: 0.5rem;
+        }
+
+        /* Principles Grid */
+        .principles-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .principle {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+        }
+
+        .principle h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .principle p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Resources */
+        .resources-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .resource-link {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s;
+        }
+
+        .resource-link:hover {
+            border-color: var(--accent);
+            background: var(--bg-primary);
+        }
+
+        .resource-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 0.5rem;
+            background: #E0E7FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 0.85rem;
+        }
+
+        :root[data-theme="dark"] .resource-icon,
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) .resource-icon {
+                background: #1E293B;
+            }
+        }
+
+        .resource-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .resource-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            .subtitle {
+                display: none;
+            }
+
+            .initiative {
+                padding: 1.5rem;
+            }
+
+            .timeline-tab {
+                padding: 0.75rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div>
+            <div class="logo">Rockwater Tax</div>
+            <div class="subtitle">Director of Talent Acquisition & People</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Title -->
+        <h1>Building your talent team <span class="highlight">from 10 to 20.</span></h1>
+        <p class="intro">A 90-day roadmap for recruiting infrastructure, interviewer training, pipeline visibility, onboarding automation, and people programs that signal culture.</p>
+
+        <!-- Timeline Tabs -->
+        <div class="timeline-tabs">
+            <button class="timeline-tab active" onclick="switchTab(event, 'your-fit')">Your Fit</button>
+            <button class="timeline-tab" onclick="switchTab(event, 'phase-30')">30 Days</button>
+            <button class="timeline-tab" onclick="switchTab(event, 'phase-60')">60 Days</button>
+            <button class="timeline-tab" onclick="switchTab(event, 'phase-90')">90 Days</button>
+            <button class="timeline-tab" onclick="switchTab(event, 'principles')">Principles</button>
+            <button class="timeline-tab" onclick="switchTab(event, 'resources')">Resources</button>
+        </div>
+
+        <!-- YOUR FIT TAB -->
+        <section id="your-fit" class="tab-content active">
+            <div class="phase-header">
+                <h2>Why This Hire Works</h2>
+            </div>
+
+            <div class="fit-grid">
+                <div class="fit-box">
+                    <h3>What You Need</h3>
+                    <ul>
+                        <li><strong>AI-forward talent leader</strong> who builds agentic recruiting systems and automation-first infrastructure</li>
+                        <li><strong>Recruiter + people ops hybrid</strong> who attracts the right talent AND builds engagement to reduce turnover</li>
+                        <li><strong>Hands-on builder:</strong> recruiting infrastructure, pipeline automation, interview rigor, people programs</li>
+                        <li><strong>Strategic partner</strong> on org scaling, headcount planning, and culture signal as you grow 10 → 20+</li>
+                        <li><strong>Someone who codes</strong> (API integrations, automation workflows) and speaks engineering language</li>
+                    </ul>
+                </div>
+
+                <div class="fit-box">
+                    <h3>What You Get</h3>
+                    <ul class="clean-list">
+                        <li><strong>AI-native infrastructure builder</strong> — Ashby API integrations, Google Apps Script automation, agentic pipelines at Virio</li>
+                        <li><strong>Recruiting track record</strong> — Scaled GTM at Vercel (Series D, 85%+ offer acceptance) + founded Virio's talent function from scratch</li>
+                        <li><strong>People ops expert</strong> — Built onboarding, career development, and retention programs that reduce turnover and signal culture</li>
+                        <li><strong>Systems thinker</strong> — Automated candidate intake, scoring, dashboards — scales without burning out your team</li>
+                        <li><strong>Founding experience</strong> — Managed 16+ concurrent reqs, closed 8+ hires in hypergrowth mode</li>
+                        <li style="margin-top: 1rem;"><a href="https://www.linkedin.com/in/anett-diaz/" target="_blank" style="color: var(--accent); font-weight: 600;">View Full Background →</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="checkpoint">
+                <h4>Why This Matters for Rockwater</h4>
+                <ul>
+                    <li>You're scaling AI-native. She builds talent infrastructure that scales with AI automation, not traditional recruiting.</li>
+                    <li>You need retention. She's built people programs that reduce turnover and signal culture from day 1.</li>
+                    <li>She speaks engineering. She codes and partners with your technical team, not against it.</li>
+                    <li>She has a 90-day plan ready to execute. No ramp time. Day 1 velocity.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 30 DAYS TAB -->
+        <section id="phase-30" class="tab-content">
+            <div class="phase-header">
+                <h2>30 Days: Foundation 🚀</h2>
+                <p class="phase-goal">Establish recruiting infrastructure, train your team on interview standards, and launch multi-channel sourcing. Foundation is built.</p>
+            </div>
+
+            <div class="initiative">
+                <h3>1. Recruiting Process Audit & Streamline</h3>
+                <p class="initiative-problem"><strong>Problem:</strong> LinkedIn + emails + manual note-passing = candidates falling through cracks, zero visibility, no feedback structure.</p>
+                <ul class="action-list">
+                    <li>Map current recruiting flow end-to-end: Sourcing → Screening → Interview → Offer</li>
+                    <li>Set up tracking system with clear stages: Sourced | Recruiter Screen | Hiring Manager Screen | Final Round | Offer | Closed</li>
+                    <li>Create automated candidate email templates for screening confirmation, interview scheduling, rejection</li>
+                    <li>Move all candidates into ATS dashboard — no more random emails</li>
+                </ul>
+                <div class="why-matter">You can't scale what you can't see. This is your foundation.</div>
+            </div>
+
+            <div class="initiative">
+                <h3>2. Build Candidate Pipeline for Immediate Open Roles</h3>
+                <p class="initiative-problem"><strong>Problem:</strong> You need to hire 15-20 people by EOY. That pipeline doesn't exist yet — it's scattered across LinkedIn, inbound, and referrals.</p>
+                <ul class="action-list">
+                    <li>Immediately source candidates for open roles: Director of Accounting Services, Tax Paralegal, CPA, Sales</li>
+                    <li>Multi-channel approach: LinkedIn + targeted job boards + warm referrals</li>
+                    <li>Set up outreach cadence (HeyReach, Lemlist) for passive candidates — personalized, templated, trackable</li>
+                    <li>Build pipeline depth: aim for 3-5x pipeline for each open role by end of month</li>
+                </ul>
+                <div class="why-matter">Multi-channel sourcing beats single-channel every time.</div>
+            </div>
+
+            <div class="checkpoint">
+                <h4>End of 30 Days Checkpoint</h4>
+                <ul>
+                    <li>Recruiting process mapped + candidates flowing through ATS</li>
+                    <li>Hiring managers and interviewers trained on interviewing best practices and feedback standards</li>
+                    <li>Multi-channel sourcing in motion for key roles</li>
+                    <li>Weekly CEO/leadership sync established for pipeline overview with analytics and data to improve for next week</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 60 DAYS TAB -->
+        <section id="phase-60" class="tab-content">
+            <div class="phase-header">
+                <h2>60 Days: Process Embedding & Program Planning ⚙️</h2>
+                <p class="phase-goal">Lock in recruiting operations, build automated onboarding, and establish people programs. The system becomes reliable and repeatable.</p>
+            </div>
+
+            <div class="initiative">
+                <h3>1. Recruiting Process Operationalization</h3>
+                <p class="initiative-problem"><strong>Problem:</strong> System is built but needs to stick. Consistency required to scale without quality degradation.</p>
+                <ul class="action-list">
+                    <li>By day 60, all candidates flow through standardized pipeline — no exceptions, no random emails</li>
+                    <li>All interviewers have completed training and been formally signed off</li>
+                    <li>Establish weekly recruiting sync with CEO: pipeline health, blockers, metrics</li>
+                    <li>Automate rejection emails (respectful, on-brand)</li>
+                    <li>Track metrics: candidates per stage, time-to-hire by role, offer acceptance rate</li>
+                </ul>
+                <div class="why-matter">When everyone follows the same process, you catch quality issues early and scale without chaos.</div>
+            </div>
+
+            <div class="initiative">
+                <h3>2. Onboarding Audit & Agentic Layer</h3>
+                <p class="initiative-problem"><strong>Problem:</strong> New hires need tech setup, team onboarding, morale boosters in critical first 2 weeks. This is manual and ad-hoc right now.</p>
+                <ul class="action-list">
+                    <li>Interview all recent hires and staff members: what worked, what was confusing, what fell through?</li>
+                    <li>Audit current onboarding checklist or build from scratch</li>
+                    <li>Map tasks that can be automated: tech provisioning, welcome emails, first-week calendar, team intros</li>
+                    <li>Build agentic workflow using Slack + Google Sheets or Notion (when hire is confirmed → automatic sequence)</li>
+                </ul>
+                <div class="why-matter">First 2 weeks are critical for retention. Smooth onboarding signals you care. Automation handles repetition.</div>
+            </div>
+
+            <div class="initiative">
+                <h3>3. People Programs Roadmap</h3>
+                <p class="initiative-problem"><strong>Problem:</strong> People programs are an afterthought. They should signal that Rockwater cares about people, not just headcount.</p>
+                <ul class="action-list">
+                    <li>Audit: what HR programs exist today? (onboarding, performance reviews, 1:1 cadence, career pathing?)</li>
+                    <li>Identify gaps: structured performance conversations, career development, team rituals</li>
+                    <li>Draft quarterly people programs calendar: Q4 onboarding + AI training + EOY event | Q1 performance reviews | Q2 AI training series</li>
+                </ul>
+                <div class="why-matter">People programs signal you care about people. Early signal matters for retention.</div>
+            </div>
+
+            <div class="checkpoint">
+                <h4>End of 60 Days Checkpoint</h4>
+                <ul>
+                    <li>Recruiting pipeline is operationalized + consistent</li>
+                    <li>All interviewers trained + consistently following standards</li>
+                    <li>Agentic onboarding workflow live</li>
+                    <li>New hires report smoother first 2 weeks</li>
+                    <li>People programs calendar socialized + Q4 events planned</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 90 DAYS TAB -->
+        <section id="phase-90" class="tab-content">
+            <div class="phase-header">
+                <h2>90 Days: Scaling & Strategic Handoff 🎯</h2>
+                <p class="phase-goal">Recruiting runs smoothly with predictable outcomes. Onboarding is automated. People programs are live. You transition from operational execution to strategic partnership.</p>
+            </div>
+
+            <div class="initiative">
+                <h3>1. Recruiting Machine is Running</h3>
+                <p class="initiative-problem"><strong>By day 90:</strong> Recruiting is predictable and scalable.</p>
+                <ul class="action-list">
+                    <li>Pipeline is in full swing with clear close dates — no bottlenecks or stalled candidates</li>
+                    <li>Hiring managers are trained, confident, giving quality feedback</li>
+                    <li>Sourcing is multi-channel — not just LinkedIn</li>
+                    <li>You've closed 5-10 hires (realistic given Aug 1 start + 3-month hiring cycles)</li>
+                </ul>
+                <div class="why-matter">Track: Time-to-hire by role | Offer acceptance rate | Interviewer feedback quality | Source quality</div>
+            </div>
+
+            <div class="initiative">
+                <h3>2. Onboarding Automation Live</h3>
+                <p class="initiative-problem"><strong>50%+ of manual tasks are automated and running reliably.</strong></p>
+                <ul class="action-list">
+                    <li>Agentic workflow handling 50%+ of manual tasks — tech setup, calendar blocks, team intros</li>
+                    <li>New hires report smooth first 2 weeks (survey feedback or 1:1 conversations)</li>
+                    <li>Tech setup, team intros, calendar blocks all automated</li>
+                </ul>
+            </div>
+
+            <div class="initiative">
+                <h3>3. People Programs in Motion</h3>
+                <p class="initiative-problem"><strong>Culture infrastructure is built and socialized.</strong></p>
+                <ul class="action-list">
+                    <li>Q4 people programs calendar is socialized with team</li>
+                    <li>AI training series has kicked off or is scheduled for Q1</li>
+                    <li>Performance review framework is drafted and ready for Q1 cycle</li>
+                    <li>End the year with awards show or dinner to celebrate + announce promotions</li>
+                </ul>
+            </div>
+
+            <div class="initiative">
+                <h3>4. Director Role Shifts</h3>
+                <p class="initiative-problem"><strong>You've moved from execution to strategy.</strong></p>
+                <ul class="action-list">
+                    <li>Recruiting runs without your daily involvement — interviewers own their process</li>
+                    <li>You're partnering with hiring managers and CEO on strategy</li>
+                    <li>You're building people programs and culture infrastructure</li>
+                    <li>You have bandwidth for retention, succession planning, career development</li>
+                </ul>
+                <div class="why-matter">You've moved from putting out fires to long-term development and optimization of talent & people org.</div>
+            </div>
+
+            <div class="checkpoint">
+                <h4>End of 90 Days Checkpoint</h4>
+                <ul>
+                    <li>5-10 hires closed, pipeline predictable</li>
+                    <li>Onboarding automated + new hires have smooth first 2 weeks</li>
+                    <li>People programs calendar socialized + Q4 events happening</li>
+                    <li>You've shifted from execution to strategy</li>
+                    <li>CEO has visibility + confidence in talent function</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PRINCIPLES TAB -->
+        <section id="principles" class="tab-content">
+            <div class="phase-header">
+                <h2>Key Principles 🔑</h2>
+                <p class="phase-goal">Five principles guide how this work gets done.</p>
+            </div>
+
+            <div class="principles-grid">
+                <div class="principle">
+                    <h4>1. Speed & Urgency</h4>
+                    <p>You need 15-20 hires by EOY. Move fast, iterate, don't over-engineer. A 90% solution deployed today beats a 100% solution that never ships.</p>
+                </div>
+
+                <div class="principle">
+                    <h4>2. Hands-On</h4>
+                    <p>She'll be sourcing, interviewing, and onboarding candidates herself. Automation handles repetition, not judgment. You need someone in the trenches who can see what's working in real time.</p>
+                </div>
+
+                <div class="principle">
+                    <h4>3. Transparency</h4>
+                    <p>Weekly sync on pipeline, metrics, blockers, and wins. You stay looped in. No surprises. This builds trust and makes her your partner, not just your hire.</p>
+                </div>
+
+                <div class="principle">
+                    <h4>4. Buyer Education</h4>
+                    <p>Your hiring managers need to understand why scorecards matter, why consistent feedback matters, why the process works. Buy-in drives quality. Without it, the system breaks.</p>
+                </div>
+
+                <div class="principle">
+                    <h4>5. Culture Signal</h4>
+                    <p>People programs signal that Rockwater cares about people, not just headcount. Early signal matters for retention. A strong onboarding and EOY celebration show you value your team.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESOURCES TAB -->
+        <section id="resources" class="tab-content">
+            <div class="phase-header">
+                <h2>Live Resources</h2>
+                <p class="phase-goal">Everything needed to track progress and execute the plan.</p>
+            </div>
+
+            <div class="resources-list">
+                <a href="https://app.notion.com/p/863eda71cde24129a0a78ffa3a933d3e" target="_blank" class="resource-link">
+                    <div class="resource-icon">ATS</div>
+                    <div>
+                        <div class="resource-title">Candidate Pipeline ATS</div>
+                        <div class="resource-description">Live database tracking all candidates from sourced through hired. View interview feedback, stage progression, and hiring manager notes in real time.</div>
+                    </div>
+                </a>
+
+                <a href="https://app.notion.com/p/863eda71cde24129a0a78ffa3a933d3e" target="_blank" class="resource-link">
+                    <div class="resource-icon">📊</div>
+                    <div>
+                        <div class="resource-title">Pipeline by Stage View</div>
+                        <div class="resource-description">View candidates organized by hiring stage: Sourced, Screened, Interview, Final, Offer, Closed. See velocity and bottlenecks at a glance.</div>
+                    </div>
+                </a>
+
+                <a href="https://app.notion.com/p/863eda71cde24129a0a78ffa3a933d3e" target="_blank" class="resource-link">
+                    <div class="resource-icon">⚡</div>
+                    <div>
+                        <div class="resource-title">Hiring Urgency View</div>
+                        <div class="resource-description">Prioritized view of roles by hiring urgency. See which positions need immediate attention and current pipeline depth.</div>
+                    </div>
+                </a>
+
+                <a href="https://app.notion.com/p/3c83761a2d1981ec8d88ce0a8539aee3?pvs=204" target="_blank" class="resource-link">
+                    <div class="resource-icon">📖</div>
+                    <div>
+                        <div class="resource-title">Explore Full Notion Page</div>
+                        <div class="resource-description">Access the raw Notion dashboard with all 90-day content, sample ATS structure, and complete documentation. Start here to explore everything in one place.</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>90-Day Talent Acquisition & People Operations Strategy | Rockwater Tax | August 2026</p>
+    </footer>
+
+    <script>
+        function switchTab(event, tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('.timeline-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
